@@ -52,7 +52,37 @@ public class Busqueda {
         }
         System.out.println();
     }
+
 }
+
+// Método que realiza el ordenamiento por inserción
+public static void sort2(int[] arr) {
+    int n = arr.length;
+
+    // El bucle empieza desde el segundo elemento (índice 1)
+    for (int i = 1; i < n; ++i) {
+        int clave = arr[i]; // Elemento actual a comparar
+        int j = i - 1;
+
+        // Desplaza los elementos que son mayores que la clave
+        // hacia una posición adelante de su posición actual
+        while (j >= 0 && arr[j] > clave) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        // Inserta la clave en su posición correcta
+        arr[j + 1] = clave;
+    }
+}
+
+// Método auxiliar para imprimir el arreglo
+public static void imprimirArreglo(int[] arr) {
+    for (int num : arr) {
+        System.out.print(num + " ");
+    }
+    System.out.println();
+}
+
 
 
 
